@@ -1,0 +1,325 @@
+/* Match Day Madrid 2026 - Master Combined Style */
+:root {
+    --bg-dark: #050505;
+    --madrid-gold: #ceab5d;
+    --apple-blue: #0071e3;
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --text-main: #ffffff;
+    --text-secondary: #e0e0e0;
+    --ease-apple: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'SF Pro Display', -apple-system, system-ui, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Background imersiv vizibil cu city break.jpg */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/city break.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%); 
+    opacity: 0.8;
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, rgba(5, 5, 5, 0.6) 100%);
+    z-index: -1;
+}
+
+/* Resetare Link-uri (Elimină mov/albastru implicit) */
+a, a:visited, nav a, nav a:visited {
+    color: inherit !important;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--madrid-gold) !important;
+}
+
+/* Navigație Floating Tip Apple */
+nav {
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+nav ul {
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    padding: 10px 35px;
+    border-radius: 40px;
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+}
+
+/* Container principal Glassmorphism */
+#templatemo_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+    border-radius: 40px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+h1 {
+    font-size: 85px;
+    font-weight: 800;
+    letter-spacing: -4px;
+    margin: 0;
+    background: linear-gradient(180deg, #fff 40%, var(--madrid-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.9));
+}
+
+#salgon {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-top: 10px;
+}
+
+/* Layout Split Hero (Imagine stânga, Text dreapta) */
+.hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.hero-split .main-img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 25px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.hero-split .text-col {
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.hero-split h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Grilă Pachete */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin: 60px 0;
+}
+
+.package-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    padding: 30px;
+    transition: all 0.5s var(--ease-apple);
+    text-align: left;
+}
+
+.package-card:hover {
+    transform: translateY(-12px);
+    border-color: var(--madrid-gold);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.package-card h3 {
+    color: var(--madrid-gold);
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.match-date {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.travel-details {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 12px;
+    margin: 15px 0;
+    font-size: 13px;
+}
+
+.price {
+    display: block;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--madrid-gold);
+    margin-top: 15px;
+}
+
+/* Stil Stele Gold cu Gradient */
+.stars {
+    display: inline-block;
+    color: transparent; 
+    background: linear-gradient(180deg, #ffffff 0%, var(--madrid-gold) 100%);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    font-size: 16px;
+    letter-spacing: 2px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); 
+}
+
+/* Secțiune Formular Rezervare */
+.booking-section {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 35px;
+    border: 1px solid var(--glass-border);
+    padding: 50px;
+    margin: 60px 0;
+    text-align: center;
+}
+
+.booking-form-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+input, select {
+    background: #111 !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 14px !important;
+    padding: 16px 20px !important;
+    color: #fff !important;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: var(--madrid-gold) !important;
+}
+
+.btn-solicita {
+    background: #fff;
+    color: #000;
+    padding: 0 40px;
+    border-radius: 30px;
+    font-weight: 700;
+    height: 52px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-solicita:hover { 
+    background: var(--madrid-gold); 
+    transform: scale(1.05); 
+}
+
+/* --- Stiluri pentru Slider-ul de Recenzii --- */
+.reviews-container {
+    overflow: hidden; 
+    width: 100%;
+    padding: 20px 0;
+}
+
+.reviews-wrapper {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    padding: 0 10px;
+}
+
+.review-card {
+    min-width: calc(33.333% - 20px);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    padding: 30px;
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.review-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.review-author {
+    margin-top: 20px;
+    font-weight: bold;
+    color: var(--madrid-gold);
+}
+
+.slide-btn {
+    position: absolute;
+    right: -20px;
+    top: 55%;
+    background: rgba(10, 10, 12, 0.8);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.slide-btn:hover {
+    border-color: var(--madrid-gold);
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    padding: 60px 0;
+    text-align: center;
+    border-top: 1px solid var(--glass-border);
+    color: #a1a1a6;
+    font-size: 14px;
+}
